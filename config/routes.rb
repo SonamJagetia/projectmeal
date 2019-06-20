@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
-  devise_for :org_people, :controllers => { 
+  devise_for :org_people, :controllers => {
     :registrations => "org_people/registrations",
     :sessions => "org_people/sessions",
-    :passwords => "org_people/passwords" , 
+    :passwords => "org_people/passwords" ,
     :confirmations => "org_people/confirmations" }
-  devise_scope :org_person do 
+  devise_scope :org_person do
     get 'signup',  to: 'org_people/registrations#new'
     get 'signin',  to: 'org_people/sessions#new'
     delete 'signout', to: 'org_people/sessions#destroy'
@@ -20,11 +20,11 @@ Rails.application.routes.draw do
   get 'org_companies/preferred_deliverers/' => 'org_companies#preferred_deliverers', :to => "org_companies_preferred_deliverers"
   post 'org_companies/ajax_add_deliverers/' => 'org_companies#ajax_add_deliverers', :to => "org_companies_ajax_add_deliverers"
   post 'org_companies/remove_preferred_deliverers/' => 'org_companies#remove_preferred_deliverers', :to => "org_companies_remove_preferred_deliverers"
-  
+
   post 'org_products/delivery_status/' => 'org_products#delivery_status', :to => "org_products_delivery_status"
-  post 'org_products/send_product_ready_email/' => 'org_products#send_product_ready_email', :to => "org_products_send_product_ready_email" 
+  post 'org_products/send_product_ready_email/' => 'org_products#send_product_ready_email', :to => "org_products_send_product_ready_email"
   post 'org_products/vote_product/' => 'org_products#vote_product', :to => "org_products_vote_product"
-  get 'org_products/orders/' => 'org_products#orders', :to => "org_products_orders" 
+  get 'org_products/orders/' => 'org_products#orders', :to => "org_products_orders"
   get 'org_products/completed_orders/' => 'org_products#completed_orders', :to => "org_products_completed_orders"
 
   get 'org_people/stripe_settings/' => 'org_people#stripe_settings', :to => "org_people_stripe_settings"
@@ -50,7 +50,7 @@ Rails.application.routes.draw do
 
   resources :org_products
   resources :org_companies
-  resources :org_people  
+  resources :org_people
   resources :trx_orders
   resources :carts
   resources :catalogues

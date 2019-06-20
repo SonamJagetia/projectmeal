@@ -44,7 +44,7 @@ Rails.application.configure do
   config.action_mailer.default :charset => "utf-8"
   config.action_mailer.smtp_settings = {
     address: 'smtp.gmail.com',
-    port: 587, 
+    port: 587,
     domain: 'localhost:3000',
     user_name: '{YOUR USERNAME}',
     password: '{YOUR PASSWORD}',
@@ -57,7 +57,7 @@ Rails.application.configure do
 end
 
 class ActionDispatch::Request
-  def ip
-    "24.84.255.123"
-  end
+  # def ip
+  #   "24.84.255.123"
+  # end
 end
