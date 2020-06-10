@@ -250,7 +250,7 @@ GEM
     geo_ip (0.6.0)
       json (~> 1.4)
       rest-client (~> 1.6.1)
-    geocoder (1.2.11)
+    geocoder (1.6.1)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
     guard (2.13.0)
